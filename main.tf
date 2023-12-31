@@ -65,9 +65,9 @@ module "aurora" {
   publicly_accessible             = false
   create_security_group           = true
   security_group_name             = var.rds_sg
-#   depends_on = [
-#     module.vpc
-#   ]
+  depends_on = [
+    module.vpc
+  ]
 #   security_group_rules = {
 #     ingress = {
 #       description = "allow traffic from ec2 instance"
@@ -81,6 +81,8 @@ module "aurora" {
   skip_final_snapshot = true
 
 }
+
+
 # module "cluster" {
 #   source  = "terraform-aws-modules/rds-aurora/aws"
 
