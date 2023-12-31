@@ -1,16 +1,7 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.26.0"
-    }
-  }
-}
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.1.2"
-  # region        = var.aws_region
+#   region        = var.aws_region
   cidr                        = var.subnet_for_vpc
   azs                         = var.availiblity_zone
   private_subnets             = var.private_subnets_azs
