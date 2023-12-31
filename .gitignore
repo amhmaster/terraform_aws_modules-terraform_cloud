@@ -1,0 +1,11 @@
+# directories
+.terraform/
+
+# files
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform*
+
+# logs
+*.log
