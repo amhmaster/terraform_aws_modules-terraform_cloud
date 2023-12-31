@@ -65,17 +65,17 @@ module "aurora" {
   publicly_accessible             = false
   create_security_group           = true
   security_group_name             = var.rds_sg
-  depends_on = [
-    module.vpc
-  ]
-  security_group_rules = {
-    ingress = {
-      description = "allow traffic from ec2 instance"
-      instance    = module.ec2_instance.id
-      cidr_blocks = module.vpc.public_subnets[0]
-      port        = 3306
-    }
-  }
+#   depends_on = [
+#     module.vpc
+#   ]
+#   security_group_rules = {
+#     ingress = {
+#       description = "allow traffic from ec2 instance"
+#       instance    = module.ec2_instance.id
+#       cidr_blocks = module.vpc.public_subnets[0]
+#       port        = 3306
+#     }
+#   }
 
   apply_immediately   = true
   skip_final_snapshot = true
