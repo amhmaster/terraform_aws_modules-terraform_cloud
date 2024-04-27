@@ -6,15 +6,24 @@ terraform {
       version = ">= 5.26.0"
     }
   }
+}  
 
-  cloud {
-    workspaces {
-      name = "terraform_aws_modules-terraform_cloud"
-    }
-  }
-}
+#   cloud {
+#     workspaces {
+#       name = "terraform_aws_modules-terraform_cloud"
+#     }
+#   }
+# }
+
+# provider "aws" {
+#   region  = var.aws_region
+# }
 
 provider "aws" {
-  region  = var.aws_region
+  shared_config_files      = ["/home/vagrant/.aws/config"]
+  shared_credentials_files = ["/home/vagrant/.aws/credentials"]
+  profile                  = "amh-bca-aws-prod"
+  # alias                  = "thanhtikesoe"              
+  region = var.aws_region
 }
 
