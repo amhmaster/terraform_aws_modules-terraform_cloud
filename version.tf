@@ -15,9 +15,9 @@ terraform {
   }
 }
 
-provider "aws" {
-  region  = var.aws_region
-}
+# provider "aws" {
+#   region  = var.aws_region
+# }
 
 provider "aws" {
   shared_config_files      = ["/home/vagrant/.aws/config"]
