@@ -15,15 +15,15 @@ terraform {
   }
 }
 
-# provider "aws" {
-#   region  = var.aws_region
-# }
-
 provider "aws" {
-  shared_config_files      = ["/home/vagrant/.aws/config"]
-  shared_credentials_files = ["/home/vagrant/.aws/credentials"]
-  profile                  = "amh-bca-aws-prod"
-  # alias                  = "thanhtikesoe"              
-  region = var.aws_region
+  region  = var.aws_region
 }
+
+# provider "aws" {
+#   shared_config_files      = ["/home/vagrant/.aws/config"]
+#   shared_credentials_files = ["/home/vagrant/.aws/credentials"]
+#   profile                  = "amh-bca-aws-prod"
+#   # alias                  = "thanhtikesoe"              
+#   region = var.aws_region
+# }
 
