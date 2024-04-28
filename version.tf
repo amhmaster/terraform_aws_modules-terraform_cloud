@@ -22,8 +22,7 @@ provider "aws" {
 # provider "aws" {
 #   shared_config_files      = ["/home/vagrant/.aws/config"]
 #   shared_credentials_files = ["/home/vagrant/.aws/credentials"]
-#   profile                  = "amh-bca-aws-prod"
-#   # alias                  = "thanhtikesoe"              
+#   profile                  = "amh-bca-aws-prod"             
 #   region = var.aws_region
 # }
 
