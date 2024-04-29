@@ -44,7 +44,7 @@ module "aurora" {
   instances = {
     1 = {
       instance_class      = "db.t3.medium"
-      publicly_accessible = false
+      publicly_accessible = true
     }
     # 2 = {
     #   identifier     = "mysql-static-1"
