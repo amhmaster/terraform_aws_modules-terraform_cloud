@@ -20,7 +20,7 @@ module "ec2_instance" {
   source                      = "terraform-aws-modules/ec2-instance/aws"
   depends_on                  = [module.vpc.public_subnets]
   name                        = var.instance
-  ami                         = "ami-05fb0b8c1424f266b"
+  ami                         = "ami-003c463c8207b4dfa"
   instance_type               = "t2.micro"
   key_name                    = module.key_pair.key_pair_name 
   associate_public_ip_address = true
