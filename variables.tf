@@ -37,7 +37,7 @@ variable "instance" {
 variable "key_pair" {
   description = "Name of Key Pair"
   type        = string
-  default     = "ecs-keypair"
+  default     = "nginx-key"
 }
 
 variable "security_group_name" {
