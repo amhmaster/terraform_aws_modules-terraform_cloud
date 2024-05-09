@@ -82,7 +82,37 @@ module "aurora" {
 
 }
 
+module "ecs" {
+  source = "terraform-aws-modules/ecs/aws"
+  version = "5.11.1"
+  cluster_name = "DEV-ECS"
 
+  # cluster_configuration = {
+  #   execute_command_configuration = {
+  #     logging = "OVERRIDE"
+  #     log_configuration = {
+  #       cloud_watch_log_group_name = "/aws/ecs/aws-ec2"
+  #     }
+  #   }
+  # }
+
+  fargate_capacity_providers = {
+    FARGATE = {
+      default_capacity_provider_strategy = {
+        weight = 50
+      }
+    }
+    FARGATE_SPOT = {
+      default_capacity_provider_strategy = {
+        weight = 50
+      }
+    }
+  }
+}  
+# resource "aws_ecs_task_definition" "backend" {
+#   family                = "backend"
+#   container_definitions = file("./backend.json")
+# }
 # module "cluster" {
 #   source  = "terraform-aws-modules/rds-aurora/aws"
 
