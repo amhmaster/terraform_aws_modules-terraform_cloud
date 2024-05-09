@@ -55,7 +55,7 @@ variable "db_name" {
 variable "db_password" {
   description = "master password for db"
   type        = string
-  default     = "Asd123!@"
+  default     = "amh12345"
 }
 
 variable "db_subnet_group" {
