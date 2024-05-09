@@ -39,7 +39,7 @@ module "aurora" {
   name            = var.db_name
   engine          = "aurora-mysql"
   engine_version  = "8.0"
-  master_username = "root"
+  master_username = "admin"
   master_password = var.db_password
   instances = {
     1 = {
@@ -62,7 +62,7 @@ module "aurora" {
   create_db_subnet_group          = true
   db_subnet_group_name            = var.db_subnet_group
   subnets                         = [module.vpc.private_subnets[0], module.vpc.private_subnets[1]]
-  publicly_accessible             = false
+  publicly_accessible             = true
   create_security_group           = true
   security_group_name             = var.rds_sg
   depends_on = [
